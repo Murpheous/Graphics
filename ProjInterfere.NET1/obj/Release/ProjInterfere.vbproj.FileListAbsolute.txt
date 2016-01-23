@@ -1,0 +1,8 @@
+C:\My Docs\Web Pictures\ProjInterfere.NET1\obj\Release\ResolveAssemblyReference.cache
+C:\My Docs\Web Pictures\ProjInterfere.NET1\obj\Release\ProjInterfere.FrmIf.resources
+C:\My Docs\Web Pictures\ProjInterfere.NET1\obj\Release\ProjInterfere.vbproj.GenerateResource.Cache
+C:\My Docs\Web Pictures\ProjInterfere.NET1\bin\ProjInterfere.exe
+C:\My Docs\Web Pictures\ProjInterfere.NET1\bin\ProjInterfere.xml
+C:\My Docs\Web Pictures\ProjInterfere.NET1\obj\Release\ProjInterfere.exe
+C:\My Docs\Web Pictures\ProjInterfere.NET1\obj\Release\ProjInterfere.xml
+C:\My Docs\Web Pictures\ProjInterfere.NET1\obj\Release\ProjInterfere.Resources.resources

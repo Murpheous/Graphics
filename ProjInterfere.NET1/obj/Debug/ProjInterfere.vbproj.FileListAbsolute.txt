@@ -1,0 +1,20 @@
+C:\My Docs\Web Pictures\ProjInterfere.NET1\obj\Debug\ResolveAssemblyReference.cache
+C:\My Docs\Web Pictures\ProjInterfere.NET1\obj\Debug\ProjInterfere.FrmIf.resources
+C:\My Docs\Web Pictures\ProjInterfere.NET1\obj\Debug\ProjInterfere.vbproj.GenerateResource.Cache
+C:\My Docs\Web Pictures\ProjInterfere.NET1\obj\Debug\ProjInterfere.Resources.resources
+C:\My Docs\Web Pictures\ProjInterfere.NET1\bin\ProjInterfere.exe
+C:\My Docs\Web Pictures\ProjInterfere.NET1\bin\ProjInterfere.pdb
+C:\My Docs\Web Pictures\ProjInterfere.NET1\bin\ProjInterfere.xml
+C:\My Docs\Web Pictures\ProjInterfere.NET1\obj\Debug\ProjInterfere.exe
+C:\My Docs\Web Pictures\ProjInterfere.NET1\obj\Debug\ProjInterfere.xml
+C:\My Docs\Web Pictures\ProjInterfere.NET1\obj\Debug\ProjInterfere.pdb
+D:\Graphics\ProjInterfere.NET1\obj\Debug\ProjInterfere.exe
+D:\Graphics\ProjInterfere.NET1\obj\Debug\ProjInterfere.xml
+D:\Graphics\ProjInterfere.NET1\obj\Debug\ProjInterfere.pdb
+D:\Graphics\ProjInterfere.NET1\bin\ProjInterfere.exe
+D:\Graphics\ProjInterfere.NET1\bin\ProjInterfere.pdb
+D:\Graphics\ProjInterfere.NET1\bin\ProjInterfere.xml
+D:\Graphics\ProjInterfere.NET1\obj\Debug\ProjInterfere.vbprojResolveAssemblyReference.cache
+D:\Graphics\ProjInterfere.NET1\obj\Debug\ProjInterfere.FrmIf.resources
+D:\Graphics\ProjInterfere.NET1\obj\Debug\ProjInterfere.Resources.resources
+D:\Graphics\ProjInterfere.NET1\obj\Debug\ProjInterfere.vbproj.GenerateResource.Cache
