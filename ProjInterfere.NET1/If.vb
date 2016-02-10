@@ -6,26 +6,25 @@ Friend Class FrmIf
     Public MyBitmap As Bitmap
     Public MyGraphics As Graphics
     Dim RunningMax As Double
-    Public Const ScreenDiv As Integer = 1
     Public Const nDeltas As Integer = nStartScreenPoints / StartSpan
-    Public Const nPixelsHigh As Integer = 2480
+    Public Const nPixelsHigh As Integer = 3600
 
-    Public Const nPixelsWide As Short = 3260
+    Public Const nPixelsWide As Short = 15360
 
 
-    Public Const StartMagnification As Short = 1
+    Public Const StartMagnification As Short = 2
     ' Number of points in start map
     Public Const nStartScreenPoints As Integer = (nPixelsHigh * StartMagnification)
 
-    Public Const SlitSigma As Short = 22
-    Public Const xStepPerPixel As Integer = 1
+    Public Const SlitSigma As Short = 195
+    Public Const xStepPerPixel As Integer = 1.25
     ' Two slit setting
 
     Public Const nSlits As Short = 2
-    Public Const StartSpan As Double = 0.7 ' Amount of screen used by start map
+    Public Const StartSpan As Double = 0.0319444 ' Amount of screen used by start map
     Public Const yPixelsPerStartStep As Double = StartSpan / StartMagnification
 
-    Public Const Lambda As Double = 16
+    Public Const Lambda As Double = 0.44
 
     ' Big pic dimensions
 
@@ -119,6 +118,9 @@ Friend Class FrmIf
         For nCount = 1 To nStartScreenPoints
             StartMap(nCount).Prob = 0.0#
         Next nCount
+        If (nSlits = 1) Then
+            SlitOffset = (nStartScreenPoints / 2) - (nSlitPoints / 2)
+        End If
         If (IsRectangle) Then
             For nMySlit = 1 To nSlits
                 For nCount = 0 To nSlitPoints
@@ -209,12 +211,12 @@ Friend Class FrmIf
         Dim MyName As String
         MyName = TxtName.Text
         MyBitmap.Save("c:\Pix\" & MyName & "BGR.BMP")
-        'ShowMap(PicResult, nPixelsWide, 0, 1)
-        'MyBitmap.Save("c:\Pix\" & MyName & "BRG.bmp")
+        ShowMap(PicResult, nPixelsWide, 0, 1)
+        MyBitmap.Save("c:\Pix\" & MyName & "BRG.bmp")
         'ShowMap(PicResult, nPixelsWide, 0, 2)
         'MyBitmap.Save("c:\Pix\" & MyName & "GRB.bmp")
-        ' ShowMap(PicResult, nPixelsWide, 0, 3)
-        ' MyBitmap.Save("c:\Pix\" & MyName & "GBR.bmp")
+        ShowMap(PicResult, nPixelsWide, 0, 3)
+        MyBitmap.Save("c:\Pix\" & MyName & "GBR.bmp")
         ShowMap(PicResult, nPixelsWide, 0, 4)
         MyBitmap.Save("c:\Pix\" & MyName & "RGB.bmp")
         'howMap(PicResult, nPixelsWide, 0, 5)
@@ -302,8 +304,9 @@ Friend Class FrmIf
     End Sub
 
     Private Sub FrmIf_Load(ByVal eventSender As System.Object, ByVal eventArgs As System.EventArgs) Handles MyBase.Load
-        PicResult.Width = nPixelsWide + 4
-        PicResult.Height = (nPixelsHigh / 2) + 4
+        PicResult.Width = nPixelsWide + 2
+        PicResult.Height = (nPixelsHigh) + 4
+        lblComplete.Text = "Idle"
         'UPGRADE_ISSUE: Constant vbPixels was not upgraded. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="55B59875-9A95-4B71-9D6A-7C294BF7139D"'
         'UPGRADE_ISSUE: PictureBox property PicResult.ScaleMode was not upgraded. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="CC4C7EC0-C903-48FC-ACCC-81861D12DA4A"'
         'PicResult..ScaleMode = vbPixels
@@ -339,6 +342,7 @@ Friend Class FrmIf
         PicCentre = ((nPixelsHigh / 2) * StartMagnification) / StartSpan
         xPerPixelSq = xStepPerPixel * xStepPerPixel
         While (Column <= nPixelsWide) And (StopIt = False)
+            lblComplete.Text = String.Format("{0:0.0}%", (Column * 100.0) / nPixelsWide)
             Row = 0
             ColDistSqr = Column * Column * xPerPixelSq
             For nCount = 0 To nDeltas
@@ -481,7 +485,6 @@ Friend Class FrmIf
                     MapMaxVal(Column, 0) = Map(nCount, Column)
                 End If
             Next nCount
-            'UPGRADE_ISSUE: PicResult was upgraded to a Panel, and cannot be coerced to a PictureBox. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="0FF1188E-27C0-4FED-842D-159C65894C9B"'
             ShowMap(PicResult, Column, Column - 1)
             Column = Column + 1
         End While
@@ -512,7 +515,9 @@ Friend Class FrmIf
         'Dim RunningMax As Double
         Dim nPeakCol As Integer
         Dim Peak2 As Integer
-        Dim nRow2 As Integer
+        Dim nRowUpper As Integer
+        Dim nRowLower As Integer
+        Dim nMidrow As Integer
         Dim MyColour As New System.Drawing.Color
         If PicCanvas.ClientSize.Width < 1 Or
            PicCanvas.ClientSize.Height < 1 Then Exit Sub
@@ -546,22 +551,24 @@ Friend Class FrmIf
         End If
 
         For MapCol = StartCol To MaxCol
+            If (StartCol = 0) Then
+                lblComplete.Text = String.Format("{0}:{1:0.0}%", nOption, (MapCol * 100.0) / MaxCol)
+            End If
+
             If ((MapCol And &HF) = &HF) Then System.Windows.Forms.Application.DoEvents()
             If (MapCol > Peak2) Then
                 RunningMax = RunningMax
             ElseIf (MapCol > nPeakCol) Then
                 RunningMax = (RunningMax * 99 + MapMaxVal(MapCol + 20, 0)) / 100
-                ' ElseIf (MapCol > nPixelsWide * 0.05) Then
-                '   RunningMax = (RunningMax * 19 + MapMaxVal(MapCol, 0)) / 20
-                ' ElseIf (MapCol > nPixelsWide * 0.01) Then
-                '   RunningMax = (RunningMax * 5 + MapMaxVal(MapCol, 0)) / 6
             ElseIf MapCol < 12 Then
                 RunningMax = MapMaxVal(MapCol, 0)
             Else
                 RunningMax = (RunningMax * 3 + MapMaxVal(MapCol - 3, 0)) / 4
             End If
-            nRow2 = (nPixelsHigh / 2) + 2
-            For Row = 0 To (nPixelsHigh / 2) + 1
+            nMidrow = (nPixelsHigh / 2) + 1
+            nRowUpper = 0
+            nRowLower = nMidrow + nMidrow - 1
+            For Row = 0 To nMidrow
                 If (Map(Row, MapCol) > 0) Then
                     pVal = ((Map(Row, MapCol)) / RunningMax) * 1.2
                     If (pVal > 1.0#) Then pVal = 1.0#
@@ -621,13 +628,21 @@ Friend Class FrmIf
                     End Select
                     MyColour = Color.FromArgb(&HFF, RedVal, GreenVal, BlueVal)
                     'UPGRADE_ISSUE: PictureBox method PicBitmap.PSet was not upgraded. Click for more: 'ms-help://MS.VSCC.v90/dv_commoner/local/redirect.htm?keyword="CC4C7EC0-C903-48FC-ACCC-81861D12DA4A"'
-                    MyBitmap.SetPixel(MapCol, nRow2, MyColour)
+                    MyBitmap.SetPixel(MapCol, nRowUpper, MyColour)
+                    If (nRowLower <> nRowUpper) Then
+                        MyBitmap.SetPixel(MapCol, nRowLower, MyColour)
+                    End If
                 End If
-                nRow2 = nRow2 - 1
+                nRowUpper = nRowUpper + 1
+                nRowLower = nRowLower - 1
             Next Row
             PicCanvas.Refresh()
         Next MapCol
         PicCanvas.Refresh()
         System.Windows.Forms.Application.DoEvents()
+    End Sub
+
+    Private Sub lblComplete_Click(sender As Object, e As EventArgs) Handles lblComplete.Click
+
     End Sub
 End Class

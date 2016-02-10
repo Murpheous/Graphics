@@ -24,13 +24,14 @@
     'It can be modified using the Windows Form Designer.
     'Do not modify it using the code editor.
 	<System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container
+        Me.components = New System.ComponentModel.Container()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.StartRectOld = New System.Windows.Forms.Button
-        Me.StartRect = New System.Windows.Forms.Button
-        Me.btnSave = New System.Windows.Forms.Button
-        Me.PicResult = New System.Windows.Forms.PictureBox
-        Me.TxtName = New System.Windows.Forms.TextBox
+        Me.StartRectOld = New System.Windows.Forms.Button()
+        Me.StartRect = New System.Windows.Forms.Button()
+        Me.btnSave = New System.Windows.Forms.Button()
+        Me.PicResult = New System.Windows.Forms.PictureBox()
+        Me.TxtName = New System.Windows.Forms.TextBox()
+        Me.lblComplete = New System.Windows.Forms.Label()
         CType(Me.PicResult, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -93,12 +94,23 @@
         Me.TxtName.Size = New System.Drawing.Size(100, 20)
         Me.TxtName.TabIndex = 7
         '
+        'lblComplete
+        '
+        Me.lblComplete.AutoSize = True
+        Me.lblComplete.Font = New System.Drawing.Font("Arial Rounded MT Bold", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblComplete.Location = New System.Drawing.Point(30, 19)
+        Me.lblComplete.Name = "lblComplete"
+        Me.lblComplete.Size = New System.Drawing.Size(82, 22)
+        Me.lblComplete.TabIndex = 8
+        Me.lblComplete.Text = "Percent"
+        '
         'FrmIf
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 14.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(696, 525)
+        Me.Controls.Add(Me.lblComplete)
         Me.Controls.Add(Me.TxtName)
         Me.Controls.Add(Me.StartRectOld)
         Me.Controls.Add(Me.StartRect)
@@ -117,5 +129,6 @@
     End Sub
     Friend WithEvents PicResult As System.Windows.Forms.PictureBox
     Friend WithEvents TxtName As System.Windows.Forms.TextBox
+    Friend WithEvents lblComplete As System.Windows.Forms.Label
 #End Region 
 End Class
