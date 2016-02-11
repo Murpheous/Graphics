@@ -28,3 +28,13 @@ C:\Users\John\Documents\GitHub\Graphics\ProjInterfere.NET1\obj\Debug\ProjInterfe
 C:\Users\John\Documents\GitHub\Graphics\ProjInterfere.NET1\obj\Debug\ProjInterfere.FrmIf.resources
 C:\Users\John\Documents\GitHub\Graphics\ProjInterfere.NET1\obj\Debug\ProjInterfere.Resources.resources
 C:\Users\John\Documents\GitHub\Graphics\ProjInterfere.NET1\obj\Debug\ProjInterfere.vbproj.GenerateResource.Cache
+C:\Users\John\Documents\GitHub\Graphics\Graphics\ProjInterfere.NET1\obj\Debug\ProjInterfere.exe
+C:\Users\John\Documents\GitHub\Graphics\Graphics\ProjInterfere.NET1\obj\Debug\ProjInterfere.xml
+C:\Users\John\Documents\GitHub\Graphics\Graphics\ProjInterfere.NET1\obj\Debug\ProjInterfere.pdb
+C:\Users\John\Documents\GitHub\Graphics\Graphics\ProjInterfere.NET1\bin\ProjInterfere.exe
+C:\Users\John\Documents\GitHub\Graphics\Graphics\ProjInterfere.NET1\bin\ProjInterfere.pdb
+C:\Users\John\Documents\GitHub\Graphics\Graphics\ProjInterfere.NET1\bin\ProjInterfere.xml
+C:\Users\John\Documents\GitHub\Graphics\Graphics\ProjInterfere.NET1\obj\Debug\ProjInterfere.vbprojResolveAssemblyReference.cache
+C:\Users\John\Documents\GitHub\Graphics\Graphics\ProjInterfere.NET1\obj\Debug\ProjInterfere.FrmIf.resources
+C:\Users\John\Documents\GitHub\Graphics\Graphics\ProjInterfere.NET1\obj\Debug\ProjInterfere.Resources.resources
+C:\Users\John\Documents\GitHub\Graphics\Graphics\ProjInterfere.NET1\obj\Debug\ProjInterfere.vbproj.GenerateResource.Cache

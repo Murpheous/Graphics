@@ -16,15 +16,15 @@ Friend Class FrmIf
     ' Number of points in start map
     Public Const nStartScreenPoints As Integer = (nPixelsHigh * StartMagnification)
 
-    Public Const SlitSigma As Short = 195
-    Public Const xStepPerPixel As Integer = 1.25
+    Public Const SlitSigma As Short = 300
+    Public Const xStepPerPixel As Integer = 1.0
     ' Two slit setting
 
     Public Const nSlits As Short = 2
-    Public Const StartSpan As Double = 0.0319444 ' Amount of screen used by start map
+    Public Const StartSpan As Double = 0.038 ' Amount of screen used by start map
     Public Const yPixelsPerStartStep As Double = StartSpan / StartMagnification
 
-    Public Const Lambda As Double = 0.44
+    Public Const Lambda As Double = 0.88
 
     ' Big pic dimensions
 
