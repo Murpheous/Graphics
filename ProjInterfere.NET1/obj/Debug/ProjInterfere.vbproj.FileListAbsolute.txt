@@ -38,3 +38,14 @@ C:\Users\John\Documents\GitHub\Graphics\Graphics\ProjInterfere.NET1\obj\Debug\Pr
 C:\Users\John\Documents\GitHub\Graphics\Graphics\ProjInterfere.NET1\obj\Debug\ProjInterfere.FrmIf.resources
 C:\Users\John\Documents\GitHub\Graphics\Graphics\ProjInterfere.NET1\obj\Debug\ProjInterfere.Resources.resources
 C:\Users\John\Documents\GitHub\Graphics\Graphics\ProjInterfere.NET1\obj\Debug\ProjInterfere.vbproj.GenerateResource.Cache
+D:\KilkennyGit\Graphics\ProjInterfere.NET1\bin\ProjInterfere.exe
+D:\KilkennyGit\Graphics\ProjInterfere.NET1\bin\ProjInterfere.pdb
+D:\KilkennyGit\Graphics\ProjInterfere.NET1\bin\ProjInterfere.xml
+D:\KilkennyGit\Graphics\ProjInterfere.NET1\obj\Debug\ProjInterfere.FrmIf.resources
+D:\KilkennyGit\Graphics\ProjInterfere.NET1\obj\Debug\ProjInterfere.Resources.resources
+D:\KilkennyGit\Graphics\ProjInterfere.NET1\obj\Debug\ProjInterfere.vbproj.GenerateResource.cache
+D:\KilkennyGit\Graphics\ProjInterfere.NET1\obj\Debug\ProjInterfere.vbproj.CoreCompileInputs.cache
+D:\KilkennyGit\Graphics\ProjInterfere.NET1\obj\Debug\ProjInterfere.exe
+D:\KilkennyGit\Graphics\ProjInterfere.NET1\obj\Debug\ProjInterfere.xml
+D:\KilkennyGit\Graphics\ProjInterfere.NET1\obj\Debug\ProjInterfere.pdb
+D:\KilkennyGit\Graphics\ProjInterfere.NET1\obj\Debug\ProjInterfere.vbproj.AssemblyReference.cache
